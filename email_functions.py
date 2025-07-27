@@ -1,9 +1,10 @@
 import smtplib
 from email.message import EmailMessage
 from email.utils import formataddr
+import os
 
-fromadd = "ajeetha757@gmail.com"
-pswd="nzwj gwff sfqi xhno"
+fromadd = os.getenv('GMAIL_FROM_ADDRESS')
+pswd= os.getenv('GMAIL_PASSWORD')
 
 def send_mail(sub,cont,toadd):
     try:

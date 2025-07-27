@@ -1,8 +1,8 @@
 import requests
 from google import genai
 from google.genai import types
-
-api_key='AIzaSyCHL4GqaB_lqSkVSIhyZZTeIagVj73npPA'
+import os
+api_key=os.getenv('GEMINI_API_KEY')
 api_url=f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
 
 def prompt_ai(prompt:str=None,history=None):
