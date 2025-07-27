@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Generated images
+generated_images/
+
 # Distribution / packaging
 .Python
 build/
@@ -178,4 +181,4 @@ cython_debug/
 #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
-.cursorindexingignore
+.cursorindexingignore\"mailing_list.txt\" 

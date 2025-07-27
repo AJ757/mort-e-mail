@@ -17,10 +17,13 @@ This module fetches the 7-day weather forecast from the Open-Meteo API for a giv
 This module checks for public holidays in India for a given date using the `holidays` library.
 
 ### `email_functions.py`
-This module handles sending emails. It supports both plain text and HTML emails using `smtplib` and Gmail's SMTP server.
+This module handles sending emails. It supports both plain text and HTML emails using `smtplib` and Gmail's SMTP server. It also includes a function to read a mailing list from `mailing_list.txt`.
 
 ### `image_generation.py`
 This module uses the Gemini API to generate an image based on a given prompt and saves it to the `generated_images` folder.
+
+### `mailing_list.txt`
+This file contains the list of email addresses to which the emails will be sent. Each email address should be on a new line. This file is included in the `.gitignore` to ensure it remains private.
 
 
 ## How to Run

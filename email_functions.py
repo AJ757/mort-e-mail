@@ -6,6 +6,11 @@ import os
 fromadd = os.getenv('GMAIL_FROM_ADDRESS')
 pswd= os.getenv('GMAIL_PASSWORD')
 
+def get_mailing_list():
+    """Reads email addresses from mailing_list.txt."""
+    with open('mailing_list.txt', 'r') as f:
+        return [line.strip() for line in f if line.strip()]
+ 
 def send_mail(sub,cont,toadd):
     try:
         mail = EmailMessage()

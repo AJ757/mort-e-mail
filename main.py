@@ -2,7 +2,7 @@ from prompt_functions import prompt_ai,add_history,prompt_ai_2
 from check_holidays import check_holiday
 from weather import forecast_7days
 from image_generation import generate_image
-from email_functions import send_mail_html
+from email_functions import send_mail_html,get_mailing_list
 
 system_prompt='''
 You are a helpful assistant that is creative. Ensure to maintain an OPEN, FRIENDLY, UPBEAT tone. Do not provide any extra texts beyond the json. Using the data that user gives, return a json with the following format:
@@ -27,12 +27,8 @@ lon=80.27847
 
 def get_response():
     weather_data=forecast_7days(lat,lon)
-    # holiday_data=check_holiday()
-    holiday_data={
-        "is_holiday":True,
-        "holiday name":"Independence Day",
-        "date":"2025-08-15"
-    }
+    holiday_data=check_holiday()
+    
     user_prompt=f'''
     Weather info - {weather_data}
     Holiday info - {holiday_data}'''
@@ -103,4 +99,5 @@ response = get_response()
 email_content=build_email(response)
 print(email_content)
 
-send_mail_html("Mort E Mail greets you :D",email_content,"abdullahmctm@gmail.com")
+for email in get_mailing_list():
+    send_mail_html("Mort E Mail greets you :D",email_content,email)
